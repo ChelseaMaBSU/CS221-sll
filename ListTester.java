@@ -263,9 +263,9 @@ public class ListTester {
 		case singleLinkedList:
 			listToUse = new IUSingleLinkedList<Integer>();
 			break;
-		case doubleLinkedList:
-			listToUse = new IUDoubleLinkedList<Integer>();
-			break;
+		// case doubleLinkedList:
+		// 	listToUse = new IUDoubleLinkedList<Integer>();
+		// 	break;
             default:
                 listToUse = null;
         }
