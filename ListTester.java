@@ -103,7 +103,7 @@ public class ListTester {
      * Print test results in a consistent format
      *
      * @param testDesc description of the test
-     * @param result   indicates if the test passed or failed
+     * @param result indicates if the test passed or failed
      */
     private void printTest(String testDesc, boolean result) {
         totalRun++;
@@ -156,39 +156,39 @@ public class ListTester {
      */
     private void runTests() {
         // Possible list contents after a scenario has been set up
-        Integer[] LIST_A = { ELEMENT_A };
+        Integer[] LIST_A = {ELEMENT_A};
         String STRING_A = "A";
-        Integer[] LIST_B = { ELEMENT_B };
+        Integer[] LIST_B = {ELEMENT_B};
         String STRING_B = "B";
-        Integer[] LIST_BA = { ELEMENT_B, ELEMENT_A };
+        Integer[] LIST_BA = {ELEMENT_B, ELEMENT_A};
         String STRING_BA = "BA";
-        Integer[] LIST_AB = { ELEMENT_A, ELEMENT_B };
+        Integer[] LIST_AB = {ELEMENT_A, ELEMENT_B};
         String STRING_AB = "AB";
-        Integer[] LIST_CB = { ELEMENT_C, ELEMENT_B };
+        Integer[] LIST_CB = {ELEMENT_C, ELEMENT_B};
         String STRING_CB = "CB";
-        Integer[] LIST_AC = { ELEMENT_A, ELEMENT_C };
+        Integer[] LIST_AC = {ELEMENT_A, ELEMENT_C};
         String STRING_AC = "AC";
-        Integer[] LIST_CAB = { ELEMENT_C, ELEMENT_A, ELEMENT_B };
+        Integer[] LIST_CAB = {ELEMENT_C, ELEMENT_A, ELEMENT_B};
         String STRING_CAB = "CAB";
-        Integer[] LIST_ABC = { ELEMENT_A, ELEMENT_B, ELEMENT_C };
+        Integer[] LIST_ABC = {ELEMENT_A, ELEMENT_B, ELEMENT_C};
         String STRING_ABC = "ABC";
-        Integer[] LIST_ACB = { ELEMENT_A, ELEMENT_C, ELEMENT_B };
+        Integer[] LIST_ACB = {ELEMENT_A, ELEMENT_C, ELEMENT_B};
         String STRING_ACB = "ACB";
-        Integer[] LIST_BC = { ELEMENT_B, ELEMENT_C };
+        Integer[] LIST_BC = {ELEMENT_B, ELEMENT_C};
         String STRING_BC = "BC";
-        Integer[] LIST_DBC = { ELEMENT_D, ELEMENT_B, ELEMENT_C };
+        Integer[] LIST_DBC = {ELEMENT_D, ELEMENT_B, ELEMENT_C};
         String STRING_DBC = "DBC";
-        Integer[] LIST_ADC = { ELEMENT_A, ELEMENT_D, ELEMENT_C };
+        Integer[] LIST_ADC = {ELEMENT_A, ELEMENT_D, ELEMENT_C};
         String STRING_ADC = "ADC";
-        Integer[] LIST_ABD = { ELEMENT_A, ELEMENT_B, ELEMENT_D };
+        Integer[] LIST_ABD = {ELEMENT_A, ELEMENT_B, ELEMENT_D};
         String STRING_ABD = "ABD";
-        Integer[] LIST_DABC = { ELEMENT_D, ELEMENT_A, ELEMENT_B, ELEMENT_C };
+        Integer[] LIST_DABC = {ELEMENT_D, ELEMENT_A, ELEMENT_B, ELEMENT_C};
         String STRING_DABC = "DABC";
-        Integer[] LIST_ADBC = { ELEMENT_A, ELEMENT_D, ELEMENT_B, ELEMENT_C };
+        Integer[] LIST_ADBC = {ELEMENT_A, ELEMENT_D, ELEMENT_B, ELEMENT_C};
         String STRING_ADBC = "ADBC";
-        Integer[] LIST_ABDC = { ELEMENT_A, ELEMENT_B, ELEMENT_D, ELEMENT_C };
+        Integer[] LIST_ABDC = {ELEMENT_A, ELEMENT_B, ELEMENT_D, ELEMENT_C};
         String STRING_ABDC = "ABDC";
-        Integer[] LIST_ABCD = { ELEMENT_A, ELEMENT_B, ELEMENT_C, ELEMENT_D };
+        Integer[] LIST_ABCD = {ELEMENT_A, ELEMENT_B, ELEMENT_C, ELEMENT_D};
         String STRING_ABCD = "ABCD";
 
         // newly constructed empty list
@@ -198,11 +198,17 @@ public class ListTester {
         testSingleElementList(emptyList_addToRearA_A, "emptyList_addToRearA_A", LIST_A, STRING_A);
         testSingleElementList(emptyList_addA_A, "emptyList_addA_A", LIST_A, STRING_A);
         testSingleElementList(emptyList_add0A_A, "emptyList_add0A_A", LIST_A, STRING_A);
+        testSingleElementList(AB_ListIterPreviousRemoveA_B, "AB_ListIterPreviousRemoveA_B", LIST_B, STRING_B);
+        testSingleElementList(AB_ListIterPreviousRemoveB_A, "AB_ListIterPreviousRemoveB_A", LIST_A, STRING_A);
+        testSingleElementList(emptyList_ListIterAddA_A, "emptyList_ListIterAddA_A", LIST_A, STRING_A);
+        testSingleElementList(A_ListIterNextSetB_B, "A_ListIterNextSetB_B", LIST_B, STRING_B);
+        testSingleElementList(A_ListIterPreviousSetB_B, "A_ListIterPreviousSetB_B", LIST_B, STRING_B);
         // 1-element to empty list
         testEmptyList(A_removeFirst_empty, "A_removeFirst_empty");
         testEmptyList(A_removeLast_empty, "A_removeLast_empty");
         testEmptyList(A_removeA_empty, "A_removeA_empty");
         testEmptyList(A_remove0_empty, "A_remove0_empty");
+        testEmptyList(A_ListIterPreviousRemoveA_empty, "A_ListIterPreviousRemoveA_empty");
         // 1-element to 2-element
         testTwoElementList(A_addToFrontB_BA, "A_addToFrontB_BA", LIST_BA, STRING_BA);
         testTwoElementList(A_addToRearB_AB, "A_addToRearB_AB", LIST_AB, STRING_AB);
@@ -210,6 +216,13 @@ public class ListTester {
         testTwoElementList(A_add0B_BA, "A_add0B_BA", LIST_BA, STRING_BA);
         testTwoElementList(A_add1B_AB, "A_add1B_AB", LIST_AB, STRING_AB);
         testTwoElementList(A_addB_AB, "A_addB_AB", LIST_AB, STRING_AB);
+        testTwoElementList(A_ListIterAddB_BA, "A_ListIterAddB_BA", LIST_BA, STRING_BA);
+        testTwoElementList(A_ListIterNextAddB_AB, "A_ListIterNextAddB_AB", LIST_AB, STRING_AB);
+        testTwoElementList(A_ListIterPreviousAddB_BA, "A_ListIterPreviousAddB_BA", LIST_BA, STRING_BA);
+        testTwoElementList(AB_ListIterNextSetC_CB, "AB_ListIterNextSetC_CB", LIST_CB, STRING_CB);
+        testTwoElementList(AB_ListIterNextNextSetC_AC, "AB_ListIterNextNextSetC_AC", LIST_AC, STRING_AC);
+        testTwoElementList(AB_ListIterPreviousSetC_CB, "AB_ListIterPreviousSetC_CB", LIST_CB, STRING_CB);
+        testTwoElementList(AB_ListIterPreviousPreviousSetC_AC, "AB_ListIterPreviousPreviousSetC_AC", LIST_AC, STRING_AC);
         // 1-element to changed 1-element via set()
         testSingleElementList(A_set0B_B, "A_set0B_B", LIST_B, STRING_B);
         // 2-element to 1-element
@@ -228,6 +241,11 @@ public class ListTester {
         testThreeElementList(AB_add1C_ACB, "AB_add1C_ACB", LIST_ACB, STRING_ACB);
         testThreeElementList(AB_add2C_ABC, "AB_add2C_ABC", LIST_ABC, STRING_ABC);
         testThreeElementList(AB_addC_ABC, "AB_addC_ABC", LIST_ABC, STRING_ABC);
+        testThreeElementList(AB_ListIterAddC_CAB, "AB_ListIterAddC_CAB", LIST_CAB, STRING_CAB);
+        testThreeElementList(AB_ListIterNextAddC_ACB, "AB_ListIterNextAddC_ACB", LIST_ACB, STRING_ACB);
+        testThreeElementList(AB_ListIterNextNextAddC_ABC, "AB_ListIterNextNextAddC_ABC", LIST_ABC, STRING_ABC);
+        testThreeElementList(AB_ListIterPreviousAddC_CAB, "AB_ListIterPreviousAddC_CAB", LIST_CAB, STRING_CAB);
+        testThreeElementList(AB_ListIterPreviousPreviousAddC_ACB, "AB_ListIterPreviousPreviousAddC_ACB", LIST_ACB, STRING_ACB);
         // 2-element to changed 2-element via set()
         testTwoElementList(AB_set0C_CB, "AB_set0C_CB", LIST_CB, STRING_CB);
         testTwoElementList(AB_set1C_AC, "AB_set1C_AC", LIST_AC, STRING_AC);
@@ -869,8 +887,8 @@ public class ListTester {
     private Scenario<Integer> AB_IterRemoveA_B = () -> AB_IterRemoveA_B();
 
     /**
-     * Scenario 46: [A, B] -> iterator.next(), iterator.next(), iterator.remove() ->
-     * [A]
+     * Scenario 46: [A, B] -> iterator.next(), iterator.next(),
+     * iterator.remove() -> [A]
      */
     private IndexedUnsortedList<Integer> AB_IterRemoveB_A() {
         IndexedUnsortedList<Integer> list = newList();
@@ -1180,7 +1198,8 @@ public class ListTester {
     private Scenario<Integer> ABC_ListIterNextNextSetD_ADC = () -> ABC_ListIterNextNextSetD_ADC();
 
     /**
-     * Scenario 79: [A,B,C] -> listIterator().next().next().next().set(D) -> [A,B,D]
+     * Scenario 79: [A,B,C] -> listIterator().next().next().next().set(D) ->
+     * [A,B,D]
      */
     private IndexedUnsortedList<Integer> ABC_ListIterNextNextNextSetD_ABD() {
         IndexedUnsortedList<Integer> list = newList();
@@ -1393,7 +1412,8 @@ public class ListTester {
     private Scenario<Integer> ABC_ListIterNextNextAddD_ABDC = () -> ABC_ListIterNextNextAddD_ABDC();
 
     /**
-     * Scenario: [A,B,C] -> listIterator().next().next().next().add(D) -> [A,B,C,D]
+     * Scenario: [A,B,C] -> listIterator().next().next().next().add(D) ->
+     * [A,B,C,D]
      */
     private IndexedUnsortedList<Integer> ABC_ListIterNextNextNextAddD_ABCD() {
         IndexedUnsortedList<Integer> list = newList();
@@ -1511,7 +1531,31 @@ public class ListTester {
                     testIterRemove(scenario.build().iterator(), Result.IllegalState));
             // ListIterator
             if (SUPPORTS_LIST_ITERATOR) {
-                // TODO: will add for double-linked list
+                printTest(scenarioName + "_testListIter", testListIter(scenario.build(), Result.NoException));
+                printTest(scenarioName + "_testListIter0", testListIter(scenario.build(), 0, Result.NoException));
+                printTest(scenarioName + "_testListIter1", testListIter(scenario.build(), 1, Result.IndexOutOfBounds));
+
+                printTest(scenarioName + "_testListIterHasNext",
+                        testIterHasNext(scenario.build().listIterator(), Result.False));
+                printTest(scenarioName + "_testListIterNext",
+                        testIterNext(scenario.build().listIterator(), null, Result.NoSuchElement));
+                printTest(scenarioName + "_testListIterHasPrevious",
+                        testListIterHasPrevious(scenario.build().listIterator(), Result.False));
+                printTest(scenarioName + "_testListIterPrevious",
+                        testListIterPrevious(scenario.build().listIterator(), null, Result.NoSuchElement));
+                printTest(scenarioName + "_testListIterRemove",
+                        testIterRemove(scenario.build().listIterator(), Result.IllegalState));
+                printTest(scenarioName + "_testListIterAdd",
+                        testListIterAdd(scenario.build().listIterator(), ELEMENT_A, Result.NoException));
+                printTest(scenarioName + "_testListIterSet",
+                        testListIterSet(scenario.build().listIterator(), ELEMENT_A, Result.IllegalState));
+                printTest(scenarioName + "_testListIterNextIndex",
+                        testListIterNextIndex(scenario.build().listIterator(), 0, Result.MatchingValue));
+                printTest(scenarioName + "_testListIterPreviousIndex",
+                        testListIterPreviousIndex(scenario.build().listIterator(), -1, Result.MatchingValue));
+                printTest(scenarioName + "_testListIterConcurrent",
+                        testListIterConcurrent(scenario.build(), Result.NoException));
+
             } else {
                 printTest(scenarioName + "_testListIter", testListIter(scenario.build(), Result.UnsupportedOperation));
                 printTest(scenarioName + "_testListIter0",
@@ -1613,7 +1657,72 @@ public class ListTester {
             printTest(scenarioName + "_iterNextRemove_testIterRemove",
                     testIterRemove(iterAfterRemove(iterAfterNext(scenario.build(), 1)), Result.IllegalState));// ListIterator
             if (SUPPORTS_LIST_ITERATOR) {
-                // TODO: will add for double-linked list
+                printTest(scenarioName + "_testListIter", testListIter(scenario.build(), Result.NoException));
+                printTest(scenarioName + "_testListIter0", testListIter(scenario.build(), 0, Result.NoException));
+                printTest(scenarioName + "_testListIter1", testListIter(scenario.build(), 1, Result.NoException));
+                printTest(scenarioName + "_testListIter2", testListIter(scenario.build(), 2, Result.IndexOutOfBounds));
+
+                printTest(scenarioName + "_testListIterHasNext",
+                        testIterHasNext(scenario.build().listIterator(), Result.True));
+                printTest(scenarioName + "_testListIterNext",
+                        testIterNext(scenario.build().listIterator(), contents[0], Result.MatchingValue));
+                printTest(scenarioName + "_testListIterHasPrevious",
+                        testListIterHasPrevious(scenario.build().listIterator(), Result.False));
+                printTest(scenarioName + "_testListIterPrevious",
+                        testListIterPrevious(scenario.build().listIterator(), null, Result.NoSuchElement));
+                printTest(scenarioName + "_testListIterRemove",
+                        testIterRemove(scenario.build().listIterator(), Result.IllegalState));
+                printTest(scenarioName + "_testListIterAdd",
+                        testListIterAdd(scenario.build().listIterator(), ELEMENT_B, Result.NoException));
+                printTest(scenarioName + "_testListIterSet",
+                        testListIterSet(scenario.build().listIterator(), ELEMENT_B, Result.IllegalState));
+                printTest(scenarioName + "_testListIterNextIndex",
+                        testListIterNextIndex(scenario.build().listIterator(), 0, Result.MatchingValue));
+                printTest(scenarioName + "_testListIterPreviousIndex",
+                        testListIterPreviousIndex(scenario.build().listIterator(), -1, Result.MatchingValue));
+                // After next()
+                printTest(scenarioName + "_listIterNext_testHasNext",
+                        testIterHasNext(listIterAfterNext(scenario.build().listIterator(), 1), Result.False));
+                printTest(scenarioName + "_listIterNext_testNext",
+                        testIterNext(listIterAfterNext(scenario.build().listIterator(), 1), null, Result.NoSuchElement));
+                printTest(scenarioName + "_listIterNext_testHasPrevious",
+                        testListIterHasPrevious(listIterAfterNext(scenario.build().listIterator(), 1), Result.True));
+                printTest(scenarioName + "_listIterNext_testPrevious",
+                        testListIterPrevious(listIterAfterNext(scenario.build().listIterator(), 1), contents[0], Result.MatchingValue));
+                printTest(scenarioName + "_listIterNext_testRemove",
+                        testIterRemove(listIterAfterNext(scenario.build().listIterator(), 1), Result.NoException));
+                printTest(scenarioName + "_listIterNext_testAdd",
+                        testListIterAdd(listIterAfterNext(scenario.build().listIterator(), 1), ELEMENT_B, Result.NoException));
+                printTest(scenarioName + "_listIterNext_testSet",
+                        testListIterSet(listIterAfterNext(scenario.build().listIterator(), 1), ELEMENT_B, Result.NoException));
+                printTest(scenarioName + "_listIterNext_testNextIndex",
+                        testListIterNextIndex(listIterAfterNext(scenario.build().listIterator(), 1), 1, Result.MatchingValue));
+                printTest(scenarioName + "_listIterNext_testPreviousIndex",
+                        testListIterPreviousIndex(listIterAfterNext(scenario.build().listIterator(), 1), 0, Result.MatchingValue));
+
+                // After previous()
+                printTest(scenarioName + "_listIter1Previous_testHasNext",
+                        testIterHasNext(listIterAfterPrevious(scenario.build().listIterator(1), 1), Result.True));
+                printTest(scenarioName + "_listIter1Previous_testNext",
+                        testIterNext(listIterAfterPrevious(scenario.build().listIterator(1), 1), contents[0], Result.MatchingValue));
+                printTest(scenarioName + "_listIter1Previous_testHasPrevious",
+                        testListIterHasPrevious(listIterAfterPrevious(scenario.build().listIterator(1), 1), Result.False));
+                printTest(scenarioName + "_listIter1Previous_testPrevious",
+                        testListIterPrevious(listIterAfterPrevious(scenario.build().listIterator(1), 1), null, Result.NoSuchElement));
+                printTest(scenarioName + "_listIter1Previous_testRemove",
+                        testIterRemove(listIterAfterPrevious(scenario.build().listIterator(1), 1), Result.NoException));
+                printTest(scenarioName + "_listIter1Previous_testAdd",
+                        testListIterAdd(listIterAfterPrevious(scenario.build().listIterator(1), 1), ELEMENT_B, Result.NoException));
+                printTest(scenarioName + "_listIter1Previous_testSet",
+                        testListIterSet(listIterAfterPrevious(scenario.build().listIterator(1), 1), ELEMENT_B, Result.NoException));
+                printTest(scenarioName + "_listIter1Previous_testNextIndex",
+                        testListIterNextIndex(listIterAfterPrevious(scenario.build().listIterator(1), 1), 0, Result.MatchingValue));
+                printTest(scenarioName + "_listIter1Previous_testPreviousIndex",
+                        testListIterPreviousIndex(listIterAfterPrevious(scenario.build().listIterator(1), 1), -1, Result.MatchingValue));
+
+                printTest(scenarioName + "_testListIterConcurrent",
+                        testListIterConcurrent(scenario.build(), Result.NoException));
+
             } else {
                 printTest(scenarioName + "_testListIter", testListIter(scenario.build(), Result.UnsupportedOperation));
                 printTest(scenarioName + "_testListIter0",
@@ -1772,7 +1881,74 @@ public class ListTester {
 
             // ListIterator
             if (SUPPORTS_LIST_ITERATOR) {
-                // TODO: will add for double-linked list
+                printTest(scenarioName + "_testListIter", testListIter(scenario.build(), Result.NoException));
+                printTest(scenarioName + "_testListIter0", testListIter(scenario.build(), 0, Result.NoException));
+                printTest(scenarioName + "_testListIter1", testListIter(scenario.build(), 1, Result.NoException));
+                printTest(scenarioName + "_testListIter2", testListIter(scenario.build(), 2, Result.NoException));
+                printTest(scenarioName + "_testListIter3", testListIter(scenario.build(), 3, Result.IndexOutOfBounds));
+
+                printTest(scenarioName + "_testListIterHasNext",
+                        testIterHasNext(scenario.build().listIterator(), Result.True));
+                printTest(scenarioName + "_testListIterNext",
+                        testIterNext(scenario.build().listIterator(), contents[0], Result.MatchingValue));
+                printTest(scenarioName + "_testListIterHasPrevious",
+                        testListIterHasPrevious(scenario.build().listIterator(), Result.False));
+                printTest(scenarioName + "_testListIterPrevious",
+                        testListIterPrevious(scenario.build().listIterator(), null, Result.NoSuchElement));
+                printTest(scenarioName + "_testListIterRemove",
+                        testIterRemove(scenario.build().listIterator(), Result.IllegalState));
+                printTest(scenarioName + "_testListIterAdd",
+                        testListIterAdd(scenario.build().listIterator(), ELEMENT_C, Result.NoException));
+                printTest(scenarioName + "_testListIterSet",
+                        testListIterSet(scenario.build().listIterator(), ELEMENT_C, Result.IllegalState));
+                printTest(scenarioName + "_testListIterNextIndex",
+                        testListIterNextIndex(scenario.build().listIterator(), 0, Result.MatchingValue));
+                printTest(scenarioName + "_testListIterPreviousIndex",
+                        testListIterPreviousIndex(scenario.build().listIterator(), -1, Result.MatchingValue));
+
+                // After 1 next()
+                printTest(scenarioName + "_listIterNext_testHasNext",
+                        testIterHasNext(listIterAfterNext(scenario.build().listIterator(), 1), Result.True));
+                printTest(scenarioName + "_listIterNext_testNext",
+                        testIterNext(listIterAfterNext(scenario.build().listIterator(), 1), contents[1], Result.MatchingValue));
+                printTest(scenarioName + "_listIterNext_testHasPrevious",
+                        testListIterHasPrevious(listIterAfterNext(scenario.build().listIterator(), 1), Result.True));
+                printTest(scenarioName + "_listIterNext_testPrevious",
+                        testListIterPrevious(listIterAfterNext(scenario.build().listIterator(), 1), contents[0], Result.MatchingValue));
+                printTest(scenarioName + "_listIterNext_testRemove",
+                        testIterRemove(listIterAfterNext(scenario.build().listIterator(), 1), Result.NoException));
+                printTest(scenarioName + "_listIterNext_testAdd",
+                        testListIterAdd(listIterAfterNext(scenario.build().listIterator(), 1), ELEMENT_C, Result.NoException));
+                printTest(scenarioName + "_listIterNext_testSet",
+                        testListIterSet(listIterAfterNext(scenario.build().listIterator(), 1), ELEMENT_C, Result.NoException));
+                printTest(scenarioName + "_listIterNext_testNextIndex",
+                        testListIterNextIndex(listIterAfterNext(scenario.build().listIterator(), 1), 1, Result.MatchingValue));
+                printTest(scenarioName + "_listIterNext_testPreviousIndex",
+                        testListIterPreviousIndex(listIterAfterNext(scenario.build().listIterator(), 1), 0, Result.MatchingValue));
+
+                // After 2 next()
+                printTest(scenarioName + "_listIterNextNext_testHasNext",
+                        testIterHasNext(listIterAfterNext(scenario.build().listIterator(), 2), Result.False));
+                printTest(scenarioName + "_listIterNextNext_testNext",
+                        testIterNext(listIterAfterNext(scenario.build().listIterator(), 2), null, Result.NoSuchElement));
+                printTest(scenarioName + "_listIterNextNext_testHasPrevious",
+                        testListIterHasPrevious(listIterAfterNext(scenario.build().listIterator(), 2), Result.True));
+                printTest(scenarioName + "_listIterNextNext_testPrevious",
+                        testListIterPrevious(listIterAfterNext(scenario.build().listIterator(), 2), contents[1], Result.MatchingValue));
+                printTest(scenarioName + "_listIterNextNext_testRemove",
+                        testIterRemove(listIterAfterNext(scenario.build().listIterator(), 2), Result.NoException));
+                printTest(scenarioName + "_listIterNextNext_testAdd",
+                        testListIterAdd(listIterAfterNext(scenario.build().listIterator(), 2), ELEMENT_C, Result.NoException));
+                printTest(scenarioName + "_listIterNextNext_testSet",
+                        testListIterSet(listIterAfterNext(scenario.build().listIterator(), 2), ELEMENT_C, Result.NoException));
+                printTest(scenarioName + "_listIterNextNext_testNextIndex",
+                        testListIterNextIndex(listIterAfterNext(scenario.build().listIterator(), 2), 2, Result.MatchingValue));
+                printTest(scenarioName + "_listIterNextNext_testPreviousIndex",
+                        testListIterPreviousIndex(listIterAfterNext(scenario.build().listIterator(), 2), 1, Result.MatchingValue));
+
+                printTest(scenarioName + "_testListIterConcurrent",
+                        testListIterConcurrent(scenario.build(), Result.NoException));
+
             } else {
                 printTest(scenarioName + "_testListIter", testListIter(scenario.build(), Result.UnsupportedOperation));
                 printTest(scenarioName + "_testListIter0",
@@ -2019,7 +2195,32 @@ public class ListTester {
 
             // ListIterator
             if (SUPPORTS_LIST_ITERATOR) {
-                // TODO: will add for double-linked list
+                printTest(scenarioName + "_testListIter", testListIter(scenario.build(), Result.NoException));
+                printTest(scenarioName + "_testListIter0", testListIter(scenario.build(), 0, Result.NoException));
+                printTest(scenarioName + "_testListIter1", testListIter(scenario.build(), 1, Result.NoException));
+                printTest(scenarioName + "_testListIter2", testListIter(scenario.build(), 2, Result.NoException));
+                printTest(scenarioName + "_testListIter3", testListIter(scenario.build(), 3, Result.NoException));
+                printTest(scenarioName + "_testListIter4", testListIter(scenario.build(), 4, Result.IndexOutOfBounds));
+
+                printTest(scenarioName + "_testListIterHasNext",
+                        testIterHasNext(scenario.build().listIterator(), Result.True));
+                printTest(scenarioName + "_testListIterNext",
+                        testIterNext(scenario.build().listIterator(), contents[0], Result.MatchingValue));
+                printTest(scenarioName + "_testListIterHasPrevious",
+                        testListIterHasPrevious(scenario.build().listIterator(), Result.False));
+                printTest(scenarioName + "_testListIterPrevious",
+                        testListIterPrevious(scenario.build().listIterator(), null, Result.NoSuchElement));
+                printTest(scenarioName + "_testListIterRemove",
+                        testIterRemove(scenario.build().listIterator(), Result.IllegalState));
+                printTest(scenarioName + "_testListIterAdd",
+                        testListIterAdd(scenario.build().listIterator(), ELEMENT_D, Result.NoException));
+                printTest(scenarioName + "_testListIterSet",
+                        testListIterSet(scenario.build().listIterator(), ELEMENT_D, Result.IllegalState));
+                printTest(scenarioName + "_testListIterNextIndex",
+                        testListIterNextIndex(scenario.build().listIterator(), 0, Result.MatchingValue));
+                printTest(scenarioName + "_testListIterPreviousIndex",
+                        testListIterPreviousIndex(scenario.build().listIterator(), -1, Result.MatchingValue));
+
             } else {
                 printTest(scenarioName + "_testListIter", testListIter(scenario.build(), Result.UnsupportedOperation));
                 printTest(scenarioName + "_testListIter0",
@@ -2209,7 +2410,7 @@ public class ListTester {
      * Runs removeLast() method on given list and checks result against
      * expectedResult
      *
-     * @param list            a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param expectedElement element or null if expectedResult is an Exception
      * @param expectedResult
      * @return test success
@@ -2237,8 +2438,8 @@ public class ListTester {
      * Runs removeLast() method on given list and checks result against
      * expectedResult
      *
-     * @param list           a list already prepared for a given change scenario
-     * @param element        element to remove
+     * @param list a list already prepared for a given change scenario
+     * @param element element to remove
      * @param expectedResult
      * @return test success
      */
@@ -2265,7 +2466,7 @@ public class ListTester {
      * Runs first() method on a given list and checks result against
      * expectedResult
      *
-     * @param list            a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param expectedElement element or null if expectedResult is an Exception
      * @param expectedResult
      * @return test success
@@ -2293,7 +2494,7 @@ public class ListTester {
      * Runs last() method on a given list and checks result against
      * expectedResult
      *
-     * @param list            a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param expectedElement element or null if expectedResult is an Exception
      * @param expectedResult
      * @return test success
@@ -2321,7 +2522,7 @@ public class ListTester {
      * Runs contains() method on a given list and element and checks result
      * against expectedResult
      *
-     * @param list           a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param element
      * @param expectedResult
      * @return test success
@@ -2346,7 +2547,7 @@ public class ListTester {
      * Runs isEmpty() method on a given list and checks result against
      * expectedResult
      *
-     * @param list           a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param expectedResult
      * @return test success
      */
@@ -2370,7 +2571,7 @@ public class ListTester {
      * Runs size() method on a given list and checks result against
      * expectedResult
      *
-     * @param list         a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param expectedSize
      * @return test success
      */
@@ -2389,7 +2590,7 @@ public class ListTester {
      * or empty String difficult to test - just confirm that default address
      * output has been overridden
      *
-     * @param list           a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param expectedResult
      * @return test success
      */
@@ -2428,7 +2629,7 @@ public class ListTester {
      * Runs addToFront() method on a given list and checks result against
      * expectedResult
      *
-     * @param list           a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param element
      * @param expectedResult
      * @return test success
@@ -2449,7 +2650,7 @@ public class ListTester {
      * Runs addToRear() method on a given list and checks result against
      * expectedResult
      *
-     * @param list           a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param element
      * @param expectedResult
      * @return test success
@@ -2471,7 +2672,7 @@ public class ListTester {
      * Runs addAfter() method on a given list and checks result against
      * expectedResult
      *
-     * @param list           a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param target
      * @param element
      * @param expectedResult
@@ -2497,7 +2698,7 @@ public class ListTester {
      * Runs add(int, T) method on a given list and checks result against
      * expectedResult
      *
-     * @param list           a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param index
      * @param element
      * @param expectedResult
@@ -2523,7 +2724,7 @@ public class ListTester {
      * Runs add(T) method on a given list and checks result against
      * expectedResult
      *
-     * @param list           a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param element
      * @param expectedResult
      * @return test success
@@ -2547,7 +2748,7 @@ public class ListTester {
      * Runs set(int, T) method on a given list and checks result against
      * expectedResult
      *
-     * @param list           a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param index
      * @param element
      * @param expectedResult
@@ -2572,7 +2773,7 @@ public class ListTester {
      * Runs get() method on a given list and checks result against
      * expectedResult
      *
-     * @param list            a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param index
      * @param expectedElement
      * @param expectedResult
@@ -2602,7 +2803,7 @@ public class ListTester {
      * Runs remove(index) method on a given list and checks result against
      * expectedResult
      *
-     * @param list            a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param index
      * @param expectedElement
      * @param expectedResult
@@ -2632,7 +2833,7 @@ public class ListTester {
      * Runs indexOf() method on a given list and checks result against
      * expectedResult
      *
-     * @param list          a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param element
      * @param expectedIndex
      * @return test success
@@ -2677,8 +2878,7 @@ public class ListTester {
      * Runs list's iterator hasNext() method and checks result against
      * expectedResult
      *
-     * @param iterator       an iterator already positioned for the call to
-     *                       hasNext()
+     * @param iterator an iterator already positioned for the call to hasNext()
      * @param expectedResult
      * @return test success
      */
@@ -2704,10 +2904,9 @@ public class ListTester {
      * Runs list's iterator next() method and checks result against
      * expectedResult
      *
-     * @param iterator       an iterator already positioned for the call to
-     *                       hasNext()
-     * @param expectedValue  the Integer expected from next() or null if an
-     *                       exception is expected
+     * @param iterator an iterator already positioned for the call to hasNext()
+     * @param expectedValue the Integer expected from next() or null if an
+     * exception is expected
      * @param expectedResult MatchingValue or expected exception
      * @return test success
      */
@@ -2736,7 +2935,7 @@ public class ListTester {
      * Runs list's iterator remove() method and checks result against
      * expectedResult
      *
-     * @param iterator       an iterator already positioned for the call to remove()
+     * @param iterator an iterator already positioned for the call to remove()
      * @param expectedResult
      * @return test success
      */
@@ -2761,7 +2960,7 @@ public class ListTester {
      * Runs iterator() method twice on a given list and checks result against
      * expectedResult
      *
-     * @param list           a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param expectedResult
      * @return test success
      */
@@ -2817,7 +3016,7 @@ public class ListTester {
 
     /**
      * Helper for testing iterators.
-     * 
+     *
      * @param list
      * @param expectedResult
      * @return
@@ -2862,7 +3061,7 @@ public class ListTester {
      * Runs listIterator(index) method on a given list and checks result against
      * expectedResult
      *
-     * @param list           a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param expectedResult
      * @param startingIndex
      * @return test success
@@ -2889,8 +3088,8 @@ public class ListTester {
      * Runs ListIterator's hasPrevious() method and checks result against
      * expectedResult
      *
-     * @param iterator       an iterator already positioned for the call to
-     *                       hasPrevious()
+     * @param iterator an iterator already positioned for the call to
+     * hasPrevious()
      * @param expectedResult
      * @return test success
      */
@@ -2916,10 +3115,10 @@ public class ListTester {
      * Runs ListIterator previous() method and checks result against
      * expectedResult
      *
-     * @param iterator       an iterator already positioned for the call to
-     *                       hasPrevious()
-     * @param expectedValue  the Integer expected from next() or null if an
-     *                       exception is expected
+     * @param iterator an iterator already positioned for the call to
+     * hasPrevious()
+     * @param expectedValue the Integer expected from next() or null if an
+     * exception is expected
      * @param expectedResult MatchingValue or expected exception
      * @return test success
      */
@@ -2947,8 +3146,8 @@ public class ListTester {
     /**
      * Runs ListIterator add() method and checks result against expectedResult
      *
-     * @param iterator       an iterator already positioned for the call to add()
-     * @param element        new Integer for insertion
+     * @param iterator an iterator already positioned for the call to add()
+     * @param element new Integer for insertion
      * @param expectedResult
      * @return test success
      */
@@ -2970,8 +3169,8 @@ public class ListTester {
     /**
      * Runs ListIterator set() method and checks result against expectedResult
      *
-     * @param iterator       an iterator already positioned for the call to set()
-     * @param element        replacement Integer for last returned element
+     * @param iterator an iterator already positioned for the call to set()
+     * @param element replacement Integer for last returned element
      * @param expectedResult
      * @return test success
      */
@@ -2995,7 +3194,7 @@ public class ListTester {
     /**
      * Runs ListIterator nextIndex() and checks result against expected Result
      *
-     * @param iterator       already positioned for the call to nextIndex()
+     * @param iterator already positioned for the call to nextIndex()
      * @param expectedIndex
      * @param expectedResult
      * @return test success
@@ -3023,7 +3222,7 @@ public class ListTester {
      * Runs ListIterator previousIndex() and checks result against expected
      * Result
      *
-     * @param iterator       already positioned for the call to previousIndex()
+     * @param iterator already positioned for the call to previousIndex()
      * @param expectedIndex
      * @param expectedResult
      * @return test success
@@ -3052,7 +3251,7 @@ public class ListTester {
      * Runs listIterator() method twice on a given list and checks result
      * against expectedResult
      *
-     * @param list           a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param expectedResult
      * @return test success
      */
@@ -3076,7 +3275,7 @@ public class ListTester {
      * Runs listIterator(index) method twice on a given list and checks result
      * against expectedResult
      *
-     * @param list           a list already prepared for a given change scenario
+     * @param list a list already prepared for a given change scenario
      * @param index1
      * @param index2
      * @param expectedResult
@@ -3471,7 +3670,9 @@ public class ListTester {
         }
     }
 
-    /** run ListIterator concurrency tests */
+    /**
+     * run ListIterator concurrency tests
+     */
     private void test_ListIterConcurrency() {
         System.out.println("\nListIterator Concurrency Tests\n");
         try {
@@ -4913,6 +5114,7 @@ public class ListTester {
      * Interface for builder method Lambda references used above
      */
     interface Scenario<T> {
+
         IndexedUnsortedList<T> build();
     }
 }

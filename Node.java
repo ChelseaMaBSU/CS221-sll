@@ -37,7 +37,7 @@ public class Node<T> {
     }
 
     public Node<T> getPrevNode() {
-        return nextNode;
+        return prevNode;
     }
 
     public void setPrevNode(Node<T> prevNode) {
