@@ -8,14 +8,19 @@ import java.util.NoSuchElementException;
  * Double-linked node-based implementation of IndexedUnsortedlist. Supports a
  * fully-functional ListIterator in addition to basic iterator.
  *
+ * @param <T> type of elements stored in list
  * @author Chelsea Ma
  *
  */
 public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
 
+    /** Reference to first node in list */
     private Node<T> head;
+    /** Reference to last node in list */
     private Node<T> tail;
+    /** Number of elements currently in list */
     private int size;
+    /** Modification count for fail-test iterator */
     private int modCount;
 
     /**
@@ -299,16 +304,21 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
 
     /**
      * ListIterator for IUDOubleLinkedList
+     * Supports all optional ListIterator operations
      */
     private class DLLIterator implements ListIterator<T> {
 
+        /** Node that will be returned by next call  */
         private Node<T> nextNode;
+        /** Index of the next node */
         private int nextIndex;
+        /** Last node returned by next or previous */
         private Node<T> lastReturnedNode;
+        /** Iterator modCount for concurrent mod detection */
         private int iterModCount;
 
         /**
-         * Initialize iterator before first element.
+         * Initialize iterator at the beginning of list
          */
         public DLLIterator() {
             nextNode = head;
